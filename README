@@ -1,0 +1,46 @@
+Business/FedEx version 0.20
+===========================
+
+INSTALLATION
+
+To install this module type the following:
+
+   perl Makefile.PL
+   make
+   make test
+   make install
+
+REQUIRMENTS:
+  1. MUST have an available win32 box
+  2. Perl 5.x
+  3. FedEx ShipAPI Manager (WIN32).
+     https://www.fedex.com/globaldeveloper/shipapi/register.htm
+
+DESCRIPTION
+
+This module will allow transactions to be sent through the FedEx Ship Manager API.  
+The API must be installed and running for this module to work.
+At this point it is required to run this module in a Win32 environment.  
+The FedEx API is distributed with a DLL "FedExAPIclient.dll" which is called via Win32::API.
+Please make sure this file is copied into your system32 folder.
+
+Please refer to the FedEx documentation at http://www.fedex.com/globaldeveloper/shipapi/
+Here you will find more information about using the FedEx API.  You will need to know
+what UTI to use to send a request.
+
+The Universal Transaction Identifier (UTI) is a unique integral code that has been assigned to a 
+given transaction type.
+For example, the UTI of the tagged Transaction Type 021 (FedEx Express global Ship a Package Request) 
+is 2016.
+
+I have not included the proxy portion of the module.  So this is a Win32 ONLY module.
+Soon, I will be releasing a version that will talk directly to FedEx's API via HTTP.
+
+
+COPYRIGHT AND LICENCE
+
+Copyright (C) 2002 Jay Powers
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself. 
+
